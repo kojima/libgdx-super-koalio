@@ -1,10 +1,10 @@
-package com.hide.koalio;
+package com.example.koalio;
 
 import android.os.Bundle;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
-import com.hide.koalio.SuperKoalio;
+import com.example.koalio.SuperKoalio;
 
 public class AndroidLauncher extends AndroidApplication {
 	@Override

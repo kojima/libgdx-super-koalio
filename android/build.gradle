@@ -15,7 +15,7 @@ android {
         instrumentTest.setRoot('tests')
     }
     defaultConfig {
-        applicationId "com.hide.koalio"
+        applicationId "com.example.koalio"
         minSdkVersion 8
         targetSdkVersion 25
     }
@@ -68,7 +68,7 @@ task run(type: Exec) {
     }
 
     def adb = path + "/platform-tools/adb"
-    commandLine "$adb", 'shell', 'am', 'start', '-n', 'com.hide.koalio/com.hide.koalio.AndroidLauncher'
+    commandLine "$adb", 'shell', 'am', 'start', '-n', 'com.example.koalio/com.example.koalio.AndroidLauncher'
 }
 
 // sets up the Android Eclipse project, using the old Ant based build.

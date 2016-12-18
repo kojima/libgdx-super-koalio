@@ -1,4 +1,4 @@
-package com.hide.koalio;
+package com.example.koalio;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
