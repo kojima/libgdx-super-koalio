@@ -2,7 +2,7 @@
 
 # `SuperKoalio.java`(メインソースコード)
 ``` java
-package com.hide.koalio;
+package com.example.koalio;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
@@ -35,11 +35,11 @@ class SuperKoalio extends ApplicationAdapter {
 
 	/** コアラキャラクター用のクラスを定義する */
 	private static class Koala {
-		static float WIDTH;					      // キャラクターの幅
-		static float HEIGHT;				      // キャラクターの高さ
+		static float WIDTH;					// キャラクターの幅
+		static float HEIGHT;				// キャラクターの高さ
 		static float MAX_VELOCITY = 10f;	// キャラクターの最大速度
 		static float JUMP_VELOCITY = 40f;	// ジャンプの速度
-		static float DAMPING = 0.87f;     // 移動時のキャラクターの減速加減
+		static float DAMPING = 0.87f;		// 移動時のキャラクターの減速加減
 
 		// キャラクターの現在の状態を管理するための列挙型を定義する
 		enum State {
@@ -50,20 +50,20 @@ class SuperKoalio extends ApplicationAdapter {
 
 		final Vector2 position = new Vector2();		// キャラクターの位置
 		final Vector2 velocity = new Vector2();		// キャラクターの速度
-		State state = State.Walking;				      // キャラクターの状態 (立ちポーズ状態で初期化)
-		float stateTime = 0;						          // キャラクターの画像を決定するための時間
-		boolean facesRight = true;                // キャラクターの向きを管理する (右を向いている場合にtrue)
-		boolean grounded = false;					        // 地面に着地しているか (着地している場合にtrue)
+		State state = State.Walking;				// キャラクターの状態 (立ちポーズ状態で初期化)
+		float stateTime = 0;						// キャラクターの画像を決定するための時間
+		boolean facesRight = true;					// キャラクターの向きを管理する (右を向いている場合にtrue)
+		boolean grounded = false;					// 地面に着地しているか (着地している場合にtrue)
 	}
 
-	private TiledMap map;							             // ステージマップ用タイル
-	private OrthogonalTiledMapRenderer renderer;   // ステージマップのレンダラー (描画処理を行う)
-	private OrthographicCamera camera;				     // カメラ
-	private Texture koalaTexture;					         // コアラのテクスチャ (描画用画像)
-	private Animation stand;						           // コアラの立ちポーズアニメーションを管理する
-	private Animation walk;							           // コアラの歩行アニメーションを管理する
-	private Animation jump;							           // コアラのジャンプアニメーションを管理する
-	private Koala koala;							             // コアラ ( = プレイヤー)
+	private TiledMap map;							// ステージマップ用タイル
+	private OrthogonalTiledMapRenderer renderer;	// ステージマップのレンダラー (描画処理を行う)
+	private OrthographicCamera camera;				// カメラ
+	private Texture koalaTexture;					// コアラのテクスチャ (描画用画像)
+	private Animation stand;						// コアラの立ちポーズアニメーションを管理する
+	private Animation walk;							// コアラの歩行アニメーションを管理する
+	private Animation jump;							// コアラのジャンプアニメーションを管理する
+	private Koala koala;							// コアラ ( = プレイヤー)
 	private Sound jumpSound;
 	private Sound smashSound;
 	// Rectangle(矩形)のPool(プール)を作成する (ゲームの高速化/リソース有効活用のため)
@@ -110,7 +110,7 @@ class SuperKoalio extends ApplicationAdapter {
 		koala.position.set(20, 20);
 
 		jumpSound = Gdx.audio.newSound(Gdx.files.internal("jumping.wav"));	// ジャンプ用サウンドを読み込む
-		smashSound = Gdx.audio.newSound(Gdx.files.internal("smash.wav"));   // ブロック破壊用サウンドを読み込む
+		smashSound = Gdx.audio.newSound(Gdx.files.internal("smash.wav"));	// ブロック破壊用サウンドを読み込む
 	}
 
 	@Override
